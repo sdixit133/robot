@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<head>
+  <script   src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+  <link href='https://fonts.googleapis.com/css?family=Poller+One' rel='stylesheet' type='text/css'>
+  <style>
+  .head{
+    height:25px;
+    width:60px;
+    border-radius: 50px 50px 0 0;
+    -moz-border-radius: 50px 50px 0 0;
+    -webkit-border-radius: 50px 50px 0 0;
+    background:#888;
+    position: relative;
+    left: 170px;
+  }
+  @keyframes blink {
+    50%{
+    background: radial-gradient(circle, red 15%, transparent 40%), #cc5;
+  }
+}
+@-webkit-keyframes blink {
+  50%{
+    background: -webkit-radial-gradient(circle, red 15%, transparent 40%), #cc5;
+  }
+}
+@-moz-keyframes blink {
+  50%{
+    background: -moz-radial-gradient(circle, red 15%, transparent 40%), #cc5;
+  }
+  }
+  .laser {
+   animation: blink .5s infinite;
+   -webkit-animation: blink .5s infinite;
+   -moz-animation: blink .5s infinite;
+}
+  .brain{
+ background: radial-gradient(circle, white 15%, transparent 40%), #cc5;
+ background: -moz-radial-gradient(circle, white 15%, transparent 40%), #cc5;
+ background: -webkit-radial-gradient(circle, white 15%, transparent 40%), #cc5;
+ background-size: 75px 150px;
+ height: 150px;
+ width: 150px;
+ border-radius: 50%;
+ border-bottom: 40px solid #666;
+ position: relative;
+ left: 120px;
+  }
+  .torso{
+    background: #cc5;
+    background-size: 75px 150px;
+    height: 300px;
+    width: 250px;
+    border-radius: 50%;
+    border-bottom: 40px solid #666;
+    position: relative;
+    left: 70px;
+  }
+  .left {
+  font-family: 'Poller One', verdana, arial, sans-serif;
+  font-weight: bold;
+  font-size: 210px;
+  color: #666;
+  transform: rotate(200deg);
+  -webkit-transform: rotate(200deg);
+  -moz-transform: rotate(200deg);
+  position: relative;
+  top: -520px;
+  left: -1210px;
+  z-index: -2;
+}
+.right {
+  font-family: 'Poller One', verdana, arial, sans-serif;
+  font-weight: bold;
+  font-size: 210px;
+  color: #666;
+  transform: scaleY(-1) rotate(20deg);
+  -webkit-transform: scaleY(-1) rotate(20deg);
+  -moz-transform: scaleY(-1) rotate(20deg);
+  position: relative;
+  top: -765px;
+  left: 275px;
+  z-index: -2;
+}
+.rfoot{
+font-family: 'Poller One', verdana, arial, sans-serif;
+font-weight: bold;
+font-size: 210px;
+color: #666;
+transform: scaleY(-1) rotate(6deg);
+-webkit-transform: scaleY(-1) rotate(6deg);
+-moz-transform: scaleY(-1) rotate(6deg);
+position: relative;
+top: -700px;
+left: 200px;
+z-index: -2;
+}
+.lfoot{
+  font-family: 'Poller One', verdana, arial, sans-serif;
+  font-weight: bold;
+  font-size: 200px;
+  color: #666;
+  transform: scaleY(-1) rotate(5deg);
+  -webkit-transform: scaleY(-1) rotate(5deg);
+  -moz-transform: scaleY(-1) rotate(5deg);
+  position: relative;
+  top: -930px;
+  left: 100px;
+  z-index: -2;
+}
+</style>
+</head>
+<title> robo</title>
+<body>
+  <div class="head"></div>
+  <div class="brain"></div>
+  <div class="torso"></div>
+  <div class="left">j</div>
+  <div class="right">j</div>
+  <div class="foot">
+     <div class="rfoot">i</div>
+     <div class="lfoot">i</div>
+  </div>
+  <button class="flash">on/off</button>
+  <button class="color">change color!</button>
+  <script>
+$(".flash").click(function() {
+  $(".brain").toggleClass('laser');
+});
+$(".color").click(function() {
+  var red = Math.floor(Math.random() * 255);
+  var green = Math.floor(Math.random() * 255);
+  var blue = Math.floor(Math.random() * 255);
+  alert(red + "," + green + "," + blue);
+});
+</script>
+</body>
